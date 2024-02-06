@@ -18,8 +18,10 @@ impl Greeter for MyGreeter {
     ) -> Result<Response<HelloReply>, Status> {
         println!("Got a request: {:?}", request);
 
+        let x = request.into_inner();
         let reply = HelloReply {
-            message: format!("Hi {}", request.into_inner().name).into(),
+            message: format!("Hi {}!, your gender:{}, your age:{}, your company:{}, your department:{}, your id:{}, your location:{}",
+             x.name, x.gender, x.age, x.company, x.department, x.id, x.location).into(),
         };
         Ok(Response::new(reply))
     }

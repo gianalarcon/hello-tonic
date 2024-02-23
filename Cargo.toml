@@ -1,15 +1,7 @@
 [package]
-name = "hello-tonic"
+name = "hello_tonic"
 version = "0.1.0"
 edition = "2021"
-
-[[bin]]
-name = "hello-server"
-path = "src/server.rs"
-
-[[bin]]
-name = "hello-client"
-path = "src/client.rs"
 
 [dependencies]
 tonic = "0.10"
